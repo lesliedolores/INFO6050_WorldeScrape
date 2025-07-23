@@ -130,13 +130,13 @@ def run_tracker():
         word_today, source_today = fetch_todays_word()
         save_word(word_today, source_today)
     except Exception as e:
-        print(f"⚠️ Failed to fetch or save today's word: {e}")
+        print(f" Failed to fetch or save today's word: {e}")
 
     try:
         word_yesterday, source_yesterday = fetch_yesterdays_word()
         save_word(word_yesterday, source_yesterday)
     except Exception as e:
-        print(f"⚠️ Failed to fetch or save yesterday's word: {e}")
+        print(f" Failed to fetch or save yesterday's word: {e}")
 
 # === Entry Point ===
 if __name__ == '__main__':
