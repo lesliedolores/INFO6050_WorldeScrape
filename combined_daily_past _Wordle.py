@@ -15,12 +15,13 @@ import pandas as pd
 from datetime import date
 import os
 import re
+import csv
 from openpyxl import load_workbook
 from pandas import ExcelWriter
 
 # === File Path ===
-EXCEL_FILE = '/Users/lesliedoloresgarcia/Desktop/INF6050/homework/Final Project Wordle/wordle_words_combined.xlsx'
-print("📁 Excel file will be saved to:", os.path.abspath(EXCEL_FILE))
+EXCEL_FILE = 'wordle_words_today_combined.xlsx'
+print(" Excel file will be saved to:", os.path.abspath(EXCEL_FILE))
 
 URL = 'https://www.tomsguide.com/news/what-is-todays-wordle-answer'
 
@@ -130,13 +131,13 @@ def run_tracker():
         word_today, source_today = fetch_todays_word()
         save_word(word_today, source_today)
     except Exception as e:
-        print(f" Failed to fetch or save today's word: {e}")
+        print(f"⚠️ Failed to fetch or save today's word: {e}")
 
     try:
         word_yesterday, source_yesterday = fetch_yesterdays_word()
         save_word(word_yesterday, source_yesterday)
     except Exception as e:
-        print(f" Failed to fetch or save yesterday's word: {e}")
+        print(f"⚠️ Failed to fetch or save yesterday's word: {e}")
 
 # === Entry Point ===
 if __name__ == '__main__':
